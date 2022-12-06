@@ -147,3 +147,9 @@ macro_rules! almost_complete_letter_range {
         let _ = 'a'..'z';
     };
 }
+#[macro_export]
+macro_rules! almost_complete_digit_range {
+    () => {
+        let _ = '0'..'9';
+    };
+}
