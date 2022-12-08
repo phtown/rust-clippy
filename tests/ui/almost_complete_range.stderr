@@ -1,79 +1,127 @@
-error: almost complete ascii letter range
-  --> $DIR/almost_complete_letter_range.rs:29:17
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:42:17
    |
 LL |         let _ = ('a') ..'z';
    |                 ^^^^^^--^^^
    |                       |
    |                       help: use an inclusive range: `..=`
    |
-   = note: `-D clippy::almost-complete-letter-range` implied by `-D warnings`
+   = note: `-D clippy::almost-complete-range` implied by `-D warnings`
 
-error: almost complete ascii letter range
-  --> $DIR/almost_complete_letter_range.rs:30:17
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:43:17
    |
 LL |         let _ = 'A' .. ('Z');
    |                 ^^^^--^^^^^^
    |                     |
    |                     help: use an inclusive range: `..=`
 
-error: almost complete ascii letter range
-  --> $DIR/almost_complete_letter_range.rs:36:13
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:44:17
+   |
+LL |         let _ = ((('0'))) .. ('9');
+   |                 ^^^^^^^^^^--^^^^^^
+   |                           |
+   |                           help: use an inclusive range: `..=`
+
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:51:13
    |
 LL |     let _ = (b'a')..(b'z');
    |             ^^^^^^--^^^^^^
    |                   |
    |                   help: use an inclusive range: `..=`
 
-error: almost complete ascii letter range
-  --> $DIR/almost_complete_letter_range.rs:37:13
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:52:13
    |
 LL |     let _ = b'A'..b'Z';
    |             ^^^^--^^^^
    |                 |
    |                 help: use an inclusive range: `..=`
 
-error: almost complete ascii letter range
-  --> $DIR/almost_complete_letter_range.rs:42:13
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:53:13
+   |
+LL |     let _ = b'0'..b'9';
+   |             ^^^^--^^^^
+   |                 |
+   |                 help: use an inclusive range: `..=`
+
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:59:13
    |
 LL |     let _ = a!()..'z';
    |             ^^^^--^^^
    |                 |
    |                 help: use an inclusive range: `..=`
 
-error: almost complete ascii letter range
-  --> $DIR/almost_complete_letter_range.rs:45:9
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:60:13
+   |
+LL |     let _ = A!()..'Z';
+   |             ^^^^--^^^
+   |                 |
+   |                 help: use an inclusive range: `..=`
+
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:61:13
+   |
+LL |     let _ = zero!()..'9';
+   |             ^^^^^^^--^^^
+   |                    |
+   |                    help: use an inclusive range: `..=`
+
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:64:9
    |
 LL |         b'a'..b'z' if true => 1,
    |         ^^^^--^^^^
    |             |
    |             help: use an inclusive range: `..=`
 
-error: almost complete ascii letter range
-  --> $DIR/almost_complete_letter_range.rs:46:9
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:65:9
    |
 LL |         b'A'..b'Z' if true => 2,
    |         ^^^^--^^^^
    |             |
    |             help: use an inclusive range: `..=`
 
-error: almost complete ascii letter range
-  --> $DIR/almost_complete_letter_range.rs:53:9
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:66:9
+   |
+LL |         b'0'..b'9' if true => 3,
+   |         ^^^^--^^^^
+   |             |
+   |             help: use an inclusive range: `..=`
+
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:74:9
    |
 LL |         'a'..'z' if true => 1,
    |         ^^^--^^^
    |            |
    |            help: use an inclusive range: `..=`
 
-error: almost complete ascii letter range
-  --> $DIR/almost_complete_letter_range.rs:54:9
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:75:9
    |
 LL |         'A'..'Z' if true => 2,
    |         ^^^--^^^
    |            |
    |            help: use an inclusive range: `..=`
 
-error: almost complete ascii letter range
-  --> $DIR/almost_complete_letter_range.rs:22:17
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:76:9
+   |
+LL |         '0'..'9' if true => 3,
+   |         ^^^--^^^
+   |            |
+   |            help: use an inclusive range: `..=`
+
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:33:17
    |
 LL |         let _ = 'a'..'z';
    |                 ^^^--^^^
@@ -85,29 +133,103 @@ LL |     b!();
    |
    = note: this error originates in the macro `b` (in Nightly builds, run with -Z macro-backtrace for more info)
 
-error: almost complete ascii letter range
-  --> $DIR/almost_complete_letter_range.rs:67:9
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:34:17
+   |
+LL |         let _ = 'A'..'Z';
+   |                 ^^^--^^^
+   |                    |
+   |                    help: use an inclusive range: `..=`
+...
+LL |     b!();
+   |     ---- in this macro invocation
+   |
+   = note: this error originates in the macro `b` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:35:17
+   |
+LL |         let _ = '0'..'9';
+   |                 ^^^--^^^
+   |                    |
+   |                    help: use an inclusive range: `..=`
+...
+LL |     b!();
+   |     ---- in this macro invocation
+   |
+   = note: this error originates in the macro `b` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:90:9
    |
 LL |         'a'..'z' => 1,
    |         ^^^--^^^
    |            |
    |            help: use an inclusive range: `...`
 
-error: almost complete ascii letter range
-  --> $DIR/almost_complete_letter_range.rs:74:13
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:91:9
+   |
+LL |         'A'..'Z' => 2,
+   |         ^^^--^^^
+   |            |
+   |            help: use an inclusive range: `...`
+
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:92:9
+   |
+LL |         '0'..'9' => 3,
+   |         ^^^--^^^
+   |            |
+   |            help: use an inclusive range: `...`
+
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:99:13
    |
 LL |     let _ = 'a'..'z';
    |             ^^^--^^^
    |                |
    |                help: use an inclusive range: `..=`
 
-error: almost complete ascii letter range
-  --> $DIR/almost_complete_letter_range.rs:76:9
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:100:13
+   |
+LL |     let _ = 'A'..'Z';
+   |             ^^^--^^^
+   |                |
+   |                help: use an inclusive range: `..=`
+
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:101:13
+   |
+LL |     let _ = '0'..'9';
+   |             ^^^--^^^
+   |                |
+   |                help: use an inclusive range: `..=`
+
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:103:9
    |
 LL |         'a'..'z' => 1,
    |         ^^^--^^^
    |            |
    |            help: use an inclusive range: `..=`
 
-error: aborting due to 13 previous errors
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:104:9
+   |
+LL |         'A'..'Z' => 1,
+   |         ^^^--^^^
+   |            |
+   |            help: use an inclusive range: `..=`
+
+error: almost complete ascii range
+  --> $DIR/almost_complete_range.rs:105:9
+   |
+LL |         '0'..'9' => 3,
+   |         ^^^--^^^
+   |            |
+   |            help: use an inclusive range: `..=`
+
+error: aborting due to 27 previous errors
 

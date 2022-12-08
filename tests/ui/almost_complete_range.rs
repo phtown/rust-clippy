@@ -7,6 +7,7 @@
 #![warn(clippy::almost_complete_range)]
 #![allow(ellipsis_inclusive_range_patterns)]
 #![allow(clippy::needless_parens_on_range_literals)]
+#![allow(clippy::double_parens)]
 
 #[macro_use]
 extern crate macro_rules;
@@ -30,11 +31,7 @@ macro_rules! zero {
 macro_rules! b {
     () => {
         let _ = 'a'..'z';
-    };
-    () => {
         let _ = 'A'..'Z';
-    };
-    () => {
         let _ = '0'..'9';
     };
 }
